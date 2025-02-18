@@ -1,0 +1,12 @@
+{
+	"id": "alphabet_jokers",
+	"name": "Alphabet Jokers",
+	"author": ["Runtem"],
+	"description": "A mod that adds all letters of the alphabet as jokers, as well as a few special ones.",
+	"prefix": "alphabet_jokers",
+	"main_file": "main.lua",
+	"priority": 0,
+	"badge_colour": "232323",
+	"version": "1.0.0",
+	"dependencies": []
+}
