@@ -306,7 +306,7 @@ SMODS.Joker {
     },
     config = { extra = { money = 5 } },
     rarity = 1, -- Adjust rarity if needed
-    atlas = "default_jokers", -- Use default or provide custom atlas
+    atlas = "alphabet_atlas", -- Use default or provide custom atlas
     pos = { x = 0, y = 0 }, -- Adjust position for the sprite
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.extra.money } }
