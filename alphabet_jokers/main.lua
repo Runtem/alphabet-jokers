@@ -295,3 +295,29 @@ SMODS.Joker {
         end
     end
 }
+
+SMODS.Joker {
+    key = "five_dollar_joker",
+    loc_txt = {
+        name = "Five Dollar Joker",
+        text = {
+            "{C:money}$#1#{} at the end of each {C:attention}round{}"
+        }
+    },
+    config = { extra = { money = 5 } },
+    rarity = 1, -- Adjust rarity if needed
+    atlas = "default_jokers", -- Use default or provide custom atlas
+    pos = { x = 0, y = 0 }, -- Adjust position for the sprite
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.money } }
+    end,
+    calculate = function(self, card, context)
+        -- Ensure the Joker gives the money at the end of the round
+        if context.end_of_round and context.cardarea == G.jokers then
+            return {
+                dollars = card.ability.extra.money,
+                message = localize { type = "variable", key = "five_dollar_bonus", vars = { card.ability.extra.money } }
+            }
+        end
+    end
+}
